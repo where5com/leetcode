@@ -3,9 +3,9 @@ class Solution:
         # dynamic programming with indexed of index of last character.
         # dp[m] (or opt[m])  is the minimum num of cuts so that s[:m+1] can 
         # be partitioned into palindrome strings.
-        # the otp[m]=0 if s[0:m+1] is a palindrome string;
+        # the otp[m]=0 if s[0:m+1] is palindrome;
         # otherwise there exists last cut from range(1,m),
-        # in this case opt[m]=min(dp[0],...,dp[m-1])+1.
+        # in this case opt[m]=min{dp[l]: l in range(1,m) and s[l:m+1] is palindrome}+1.
         
         import numpy as np
         n=len(s)
